@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mapa</title>
+    <style>    
+        #character {
+            position: absolute;
+            width: 50px;
+            height: 88px;
+            transition: 0.1s;
+            z-index: 1000;
+        }
+        #map {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            
+        }
+    </style>
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+
+</head>
+<body>
+    <img id="character" src="images/persoFrente.png" style="left: 25px; top: 296px;">
+    <div id="map" class="leaflet-container leaflet-touch leaflet-fade-anim leaflet-grab leaflet-touch-drag leaflet-touch-zoom" tabindex="0">
+        <div class="leaflet-pane leaflet-map-pane" style="transform: translate3d(0px, 0px, 0px);">
+            <div class="leaflet-pane leaflet-tile-pane">
+                <div class="leaflet-layer " style="z-index: 1; opacity: 1;">
+                    <div class="leaflet-tile-container leaflet-zoom-animated" style="z-index: 19; transform: translate3d(0px, 0px, 0px) scale(1);">
+                        <img alt="" role="presentation" src="https://b.tile.openstreetmap.org/5/11/17.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-169px, 25px, 0px); opacity: 1;">
+                        <img alt="" role="presentation" src="https://c.tile.openstreetmap.org/5/12/17.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(87px, 25px, 0px); opacity: 1;">
+                        <img alt="" role="presentation" src="https://c.tile.openstreetmap.org/5/11/18.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-169px, 281px, 0px); opacity: 1;">
+                        <img alt="" role="presentation" src="https://a.tile.openstreetmap.org/5/12/18.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(87px, 281px, 0px); opacity: 1;">
+                        <img alt="" role="presentation" src="https://a.tile.openstreetmap.org/5/11/16.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-169px, -231px, 0px); opacity: 1;">
+                        <img alt="" role="presentation" src="https://b.tile.openstreetmap.org/5/12/16.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(87px, -231px, 0px); opacity: 1;">
+                        <img alt="" role="presentation" src="https://a.tile.openstreetmap.org/5/11/19.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(-169px, 537px, 0px); opacity: 1;">
+                        <img alt="" role="presentation" src="https://b.tile.openstreetmap.org/5/12/19.png" class="leaflet-tile leaflet-tile-loaded" style="width: 256px; height: 256px; transform: translate3d(87px, 537px, 0px); opacity: 1;">
+                    </div>
+                </div>
+            </div>
+            <div class="leaflet-pane leaflet-shadow-pane">
+                <img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(-432px, -3px, 0px);">
+                <img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(298px, -10px, 0px);">
+                <img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(50px, 321px, 0px);">
+                <img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-shadow.png" class="leaflet-marker-shadow leaflet-zoom-animated" alt="" style="margin-left: -12px; margin-top: -41px; width: 41px; height: 41px; transform: translate3d(-165px, 128px, 0px);">
+            </div>
+            <div class="leaflet-pane leaflet-overlay-pane"></div>
+            <div class="leaflet-pane leaflet-marker-pane">
+                <img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(-432px, -3px, 0px); z-index: -3;">
+                <img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(298px, -10px, 0px); z-index: -10;">
+                <img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(50px, 321px, 0px); z-index: 321;">
+                <img src="https://unpkg.com/leaflet@1.7.1/dist/images/marker-icon-2x.png" class="leaflet-marker-icon leaflet-zoom-animated leaflet-interactive" alt="" tabindex="0" style="margin-left: -12px; margin-top: -41px; width: 25px; height: 41px; transform: translate3d(-165px, 128px, 0px); z-index: 128;">
+            </div>
+            <div class="leaflet-pane leaflet-tooltip-pane"></div>
+            <div class="leaflet-pane leaflet-popup-pane"></div>
+            <div class="leaflet-proxy leaflet-zoom-animated" style="transform: translate3d(3034.83px, 4647.67px, 0px) scale(16);"></div>
+        </div>
+        <div class="leaflet-control-container">
+            <div class="leaflet-top leaflet-left">
+                <div class="leaflet-control-zoom leaflet-bar leaflet-control">
+                    <a class="leaflet-control-zoom-in" href="#" title="Zoom in" role="button" aria-label="Zoom in">+</a>
+                    <a class="leaflet-control-zoom-out" href="#" title="Zoom out" role="button" aria-label="Zoom out">−</a>
+                </div>
+            </div>
+            <div class="leaflet-top leaflet-right"></div>
+            <div class="leaflet-bottom leaflet-left"></div>
+            <div class="leaflet-bottom leaflet-right">
+                <div class="leaflet-control-attribution leaflet-control">
+                    <a href="https://leafletjs.com" title="A JS library for interactive maps">Leaflet</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
+    <script>
+        const character = document.getElementById('character');
+        const map = L.map('map', { maxZoom: 16 }).setView([-22.120338388566953, -51.4056315517982], 16);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+        maxZoom: 19,
+        }).addTo(map);
+
+        let xPosition = window.innerWidth / 2 - 25;
+        let yPosition = window.innerHeight / 2 - 25;
+        let imagePrefix = '';
+        let currentImageIndex = 0;
+
+        character.style.left = xPosition + 'px';
+        character.style.top = yPosition + 'px';
+
+        // Coordenadas das capitais do Brasil
+        const capitals = {
+            "Matarazzo": [-22.120719449606206, -51.37948396102449],
+            "Catedral de São Sebastião": [-22.122470861177835, -51.388973959179246],
+            "Museu e Arquivo Histórico Municipal": [-22.116357936904894, -51.411626518694824],
+            "Parque do Povo": [-22.12344342371128, -51.40239574568446],
+            "SESC Thermas": [-22.120529892989214, -51.413816530344384]
+        // Adicione outras coordenadas aqui...
+        };
+
+        // Adicionar marcadores (pinos) para as capitais
+        const markers = [];
+        for (const capital in capitals) {
+        const marker = L.marker(capitals[capital]);
+        marker.bindPopup(capital);
+        marker.addTo(map);
+        markers.push({ marker, collisionAlertShown: false }); // Adicione um objeto para rastrear o estado do alerta
+        }
+
+        //tratar as teclas
+        document.addEventListener('keydown', (event) => {
+
+        const key = event.key;
+
+        if (key === 'ArrowUp') {
+            character.images = 'images/persoFrente.png'
+            yPosition -= 3;
+            character.style.transition = 'transform 1s ';
+        } else if (key === 'ArrowDown') {
+            character.images = 'images/persoCostas.png'
+            yPosition += 3;
+            character.style.transform = 'scaleY(1)';
+        } else if (key === 'ArrowLeft') {
+            character.images = 'images/persoEsquerda.png'
+            xPosition -= 3;
+            character.style.transform = 'scaleX(1)';
+        } else if (key === 'ArrowRight') {
+            character.images = 'images/persoDireita.png'
+            xPosition += 3;
+            character.style.transform = 'scaleX(1)';
+        }else{
+            // alert('botão errado oreia')
+            // imagePrefix = 'src/character4/frente';
+        }
+        character.style.left = xPosition + 'px';
+        character.style.top = yPosition + 'px';
+
+        // Verificar colisão com os marcadores
+        const characterRect = character.getBoundingClientRect();
+        markers.forEach(item => {
+            const { marker, collisionAlertShown } = item;
+            if (!collisionAlertShown) {
+            const markerLatLng = marker.getLatLng();
+            const markerPos = map.latLngToContainerPoint(markerLatLng);
+
+            if (
+                xPosition + characterRect.width > markerPos.x &&
+                xPosition < markerPos.x + 1 && // Tamanho aproximado do ícone do marcador
+                yPosition + characterRect.height > markerPos.y &&
+                yPosition < markerPos.y + 1// Tamanho aproximado do ícone do marcador
+            ) {
+                alert(`Você encontrou ${marker.getPopup().getContent()}!`);
+                item.collisionAlertShown = true; // Defina a flag de alerta como true para este marcador
+            }
+            }
+        });
+        });
+    </script>
+</body>
+</html>
